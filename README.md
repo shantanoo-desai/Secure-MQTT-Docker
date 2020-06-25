@@ -108,6 +108,8 @@ Move the `rootCA.crt` and `server.*` into the `./config` directory and adjust th
 
 # Generate Passwords File
 
-`docker run -it --rm -v $pwd/config:/mosquitto/config eclipse-mosquitto mosquitto_passwd -c /mosquitto/config/passwords.txt <username>`
+NOTE: Perform the following operation in the `$HOME` directory for the encrypted password to take effect.
+
+`docker run -it --rm -v $(pwd)/mosquitto/config:/mosquitto/config eclipse-mosquitto mosquitto_passwd -c /mosquitto/config/passwords.txt <username>`
 
 to add more users change `-c` to `-b`
